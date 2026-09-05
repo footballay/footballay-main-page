@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import lineupAndTeamStats from '@asset/lineup_and_teamstat.png';
 import footballayCover from '@asset/footballay_cover.png';
+import extensionDemo from '@asset/extension-assets/footballay-demo-screenshot-ko.png';
+import lineupFeature from '@asset/desktop/mainpage-feature-img-01-lineup.png';
+import teamStatsFeature from '@asset/desktop/mainpage-feature-img-02-teamstat.png';
+import playerStatsFeature from '@asset/desktop/mainpage-feature-img-03-playerstat.png';
 import './MainBody.scss';
 
 function MainBody() {
@@ -14,46 +18,115 @@ function MainBody() {
         </div>
         <h1 className="main-title">풋볼레이</h1>
         <p className="intro-sub">
-          축구 경기{' '}
+          축구 중계와 함께 라인업, 경기 이벤트와 통계를 확인할 수 있습니다.
+          <br />
+          확장프로그램과 데스크탑 오버레이로 사용할 수 있습니다.
+          {/* 축구 경기{' '}
           <strong style={{ fontSize: '1.4rem' }}>라인업 및 팀/선수 통계 정보를 제공</strong>
           하는 무료 소프트웨어입니다.
           <br />
           라이브 스트리밍을 고려하여 설계되었으며
           <br />
-          스트리밍 화면에 자연스럽게 어울리는 UI를 제공합니다.
+          스트리밍 화면에 자연스럽게 어울리는 UI를 제공합니다. */}
         </p>
-        <Link className="download-btn" to="/download">
-          <FontAwesomeIcon icon={faDownload} style={{ marginRight: '0.5em' }} />
-          다운로드
-        </Link>
       </section>
-      <section className="features">
-        <div className="features-image">
-          <img src={lineupAndTeamStats} alt="Lineup" className="lineup-image" />
-        </div>
-        <div className="features-body">
-          <h2 className="features-title">주요 특징</h2>
-          <div className="features-content">
-            <ul className="features-list">
-              <li>광고 없는 무료 소프트웨어</li>
-              <li>실시간 라인업과 팀/선수 통계 제공</li>
-              <li>선수 교체 시 자동으로 라인업 갱신</li>
-              <li>축구 입중계 스트리밍에 최적화된 디자인</li>
-              <li>사용자 피드백 기반의 지속적인 개선</li>
-              <li>오픈 소스</li>
-            </ul>
-          </div>
+      <section className="products-section" aria-label="Footballay 제품">
+        <div className="products-grid">
+          <article className="product-card">
+            <div className="product-media extension-media">
+              <div className="extension-image-wrap">
+                <img
+                  src={extensionDemo}
+                  alt="축구 중계 화면 위에 Footballay Extension 경기 통계가 표시된 모습"
+                  className="extension-demo-image"
+                />
+                <span className="extension-image-note">배경 이미지는 AI로 생성된 예시입니다</span>
+              </div>
+            </div>
+            <div className="product-content">
+              <h3>확장프로그램</h3>
+              <p className="product-subtitle">축구 중계 볼 때 좋아요</p>
+              <p className="product-description">
+                라인업, 경기 이벤트와 통계를 중계 화면에서 바로 확인할 수 있습니다.
+                <br />
+                원할 때 숨기고 펼쳐서 확인할 수 있습니다.
+              </p>
+              <span className="product-cta product-cta--disabled">
+                Chrome 확장 프로그램 곧 출시 예정
+              </span>
+            </div>
+          </article>
+
+          <article className="product-card">
+            <div className="product-media desktop-media">
+              <img
+                src={lineupAndTeamStats}
+                alt="Footballay Desktop의 라인업과 경기 통계 화면"
+                className="desktop-product-image"
+              />
+            </div>
+            <div className="product-content">
+              <h3>데스크탑 오버레이</h3>
+              <p className="product-subtitle">입중계 스트리밍에 좋아요</p>
+              <p className="product-description">
+                독립된 오버레이 창으로 라인업과 팀·선수 통계를 표시할 수 있습니다.
+                <br />
+                스트리밍 캡처에 적합한 데스크탑 앱 형태로 제작되었습니다.
+              </p>
+              <Link className="product-cta" to="/download">
+                <FontAwesomeIcon icon={faDownload} />
+                데스크탑 앱 다운로드
+              </Link>
+            </div>
+          </article>
         </div>
       </section>
-      <section className="more-info" id="howto">
-        <p>
-          사용법이 궁금하다면{' '}
-          <a href="https://footballay.gitbook.io/docs/" target="_blank" rel="noopener noreferrer">
-            <strong>문서</strong>{' '}
-            <FontAwesomeIcon icon={faUpRightFromSquare} style={{ fontSize: '0.95em' }} />
-          </a>
-          를 참고하세요
-        </p>
+
+      <section className="shared-features" aria-labelledby="shared-features-title">
+        <div className="section-heading">
+          <h2 id="shared-features-title">주요 기능</h2>
+        </div>
+        <div className="shared-features-grid">
+          <article>
+            <div className="feature-image-wrap">
+              <img src={lineupFeature} alt="Footballay 라인업 화면" className="feature-image" />
+            </div>
+            <div className="feature-content">
+              <h3>라인업</h3>
+              <p>선발 선수와 포메이션, 교체 현황을 확인할 수 있습니다.</p>
+            </div>
+          </article>
+          <article>
+            <div className="feature-image-wrap">
+              <img
+                src={teamStatsFeature}
+                alt="Footballay 경기 통계 화면"
+                className="feature-image"
+              />
+            </div>
+            <div className="feature-content">
+              <h3>경기 통계</h3>
+              <p>점유율, 슈팅, 패스 등 주요 경기 기록을 확인할 수 있습니다.</p>
+            </div>
+          </article>
+          <article>
+            <div className="feature-image-wrap">
+              <img
+                src={playerStatsFeature}
+                alt="Footballay 선수별 통계 화면"
+                className="feature-image"
+              />
+            </div>
+            <div className="feature-content">
+              <h3>선수별 통계</h3>
+              <p>선수별 평점과 세부 경기 기록을 확인할 수 있습니다.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="league-notice" aria-label="지원 경기 안내">
+        <p>현재 EPL 경기 정보를 우선 제공하며, 지원 리그와 경기는 추후 추가될 수 있습니다.</p>
       </section>
     </main>
   );
