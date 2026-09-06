@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import lineupAndTeamStats from '@asset/lineup_and_teamstat.png';
+import lineupAndTeamStats from '@asset/desktop/mainpage-desktop-lineup-and-stats.png';
 import footballayCover from '@asset/footballay_cover.png';
 import extensionDemo from '@asset/extension-assets/footballay-demo-screenshot-ko.png';
 import lineupFeature from '@asset/desktop/mainpage-feature-img-01-lineup.png';
