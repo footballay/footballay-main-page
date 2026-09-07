@@ -4,6 +4,7 @@ import ErrorRedirect from '@src/components/error/ErrorRedirect';
 import MainPage from '@src/pages/MainPage';
 import DownloadPage from '@src/pages/DownloadPage';
 import LicensePage from '@src/pages/LicensePage';
+import PrivacyPage from '@src/pages/PrivacyPage';
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
       {
         path: 'license',
         element: <LicensePage />,
+      },
+      {
+        path: 'extension/privacy',
+        element: <PrivacyPage />,
       },
       {
         path: '*',

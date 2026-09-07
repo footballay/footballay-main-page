@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Footer.scss';
 
 function Footer() {
@@ -30,6 +30,9 @@ function Footer() {
           >
             라이선스 안내
           </span>
+          <Link className="footer-license-link" to="/extension/privacy">
+            개인정보 처리방침
+          </Link>
         </div>
         <div className="footer-license-desc">
           본 소프트웨어는 상업적 이용이 가능합니다. 데이터 제공자에 의해 지원되는 팀 로고 이미지,

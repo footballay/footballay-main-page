@@ -52,7 +52,7 @@ function MainBody() {
                 원할 때 숨기고 펼쳐서 확인할 수 있습니다.
               </p>
               <span className="product-cta product-cta--disabled">
-                Chrome 확장 프로그램 곧 출시 예정
+                Chrome 웹 스토어 등록 준비 중
               </span>
             </div>
           </article>
@@ -93,7 +93,7 @@ function MainBody() {
             </div>
             <div className="feature-content">
               <h3>라인업</h3>
-              <p>선발 선수와 포메이션, 교체 현황을 확인할 수 있습니다.</p>
+              <p>선발 선수와 포메이션, 평점, 카드, 득점 선수 등을 한눈에 확인할 수 있습니다.</p>
             </div>
           </article>
           <article>
@@ -119,7 +119,7 @@ function MainBody() {
             </div>
             <div className="feature-content">
               <h3>선수별 통계</h3>
-              <p>선수별 평점과 세부 경기 기록을 확인할 수 있습니다.</p>
+              <p>선수별 평점과 세부 스탯을 확인할 수 있습니다.</p>
             </div>
           </article>
         </div>
