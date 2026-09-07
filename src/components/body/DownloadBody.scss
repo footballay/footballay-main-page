@@ -1,75 +1,127 @@
 .download-page {
-  background: #232b4a;
-  border-radius: 24px;
-  box-shadow: 0 4px 24px 0 #23272a44;
   color: #fff;
-  margin: 48px auto;
-  max-width: 800px;
+  margin: 0 auto;
+  max-width: 1160px;
   min-height: 60vh;
-  padding: 2rem 3rem;
+  padding: 5rem 3rem;
+  width: 100%;
 }
 
 .download-title {
   font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.download-intro {
+  color: #aeb8d2;
+  margin: 0.35rem 0 1.5rem;
+}
+
+.download-products {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.download-product-section {
+  background: #182342;
+  border: 1px solid #2c3858;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.5rem;
+
+  h2 {
+    font-size: 1.45rem;
+    margin: 0 0 0.2rem;
+  }
+
+  p {
+    color: #cbd2e3;
+    line-height: 1.7;
+    margin: 0;
+  }
+}
+
+.download-product-section .product-subtitle {
+  color: #8ea1e1;
+  font-size: 0.95rem;
   font-weight: 600;
-  margin-bottom: 1.2rem;
-  width: 100%;
-  text-align: center;
+  margin: 0 0 1rem;
+}
+
+.download-product-section .product-description {
+  margin-bottom: 1.5rem;
+}
+
+.product-status {
+  align-self: flex-start;
+  background: #303a55;
+  border-radius: 24px;
+  color: #aeb8d2;
+  font-weight: 700;
+  margin-top: 10px;
+  padding: 0.75rem 1.25rem;
 }
 
 .download-btn {
-  background: #3a4a7c;
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 1.2rem 0 0;
+  align-self: flex-start;
+  margin-top: 10px;
   max-width: 320px;
-  padding: 0.9rem 0.2rem;
-  transition: background 0.2s;
-  width: 100%;
 }
 
-.download-btn:disabled {
-  background: #5a5a6a;
-  color: #e0e0e0;
-  cursor: not-allowed;
+.common-info {
+  border-top: 1px solid #2c3858;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+
+  > h2 {
+    font-size: 1.65rem;
+    font-weight: 800;
+    margin: 0;
+  }
+}
+
+.download-license {
+  color: #aeb8d2;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0.75rem 0 0;
 }
 
 .download-warning {
-  margin: 2rem 0 1.5rem;
+  margin: 2rem 0;
 
   .warning-list {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     gap: 1.5rem;
-    justify-content: center;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
   }
 
   .warning-item {
     align-items: center;
-    background: #2d365a;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px 0 #23272a22;
+    background: #182342;
+    border: 1px solid #2c3858;
+    border-radius: 16px;
     display: flex;
     flex: 1 1 0;
     flex-direction: column;
     padding: 1.2rem 1rem;
     text-align: center;
+
+    > div:last-child {
+      color: #aeb8d2;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
   }
 
   .icon {
     align-items: center;
     background: #3a4a7c;
     border-radius: 50%;
-    box-shadow: 0 1px 4px 0 #23272a22;
     display: flex;
     height: 56px;
     justify-content: center;
@@ -98,50 +150,78 @@
   }
 
   .highlight {
-    color: #ffd700;
+    color: #fff;
     display: block;
-    font-size: 1.05rem;
-    font-weight: bold;
-    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
   }
-}
-
-.divider {
-  background-color: #99999971;
-  height: 1px;
-  margin: 2.5rem 0;
-  width: 100%;
 }
 
 .available-fixture-info {
-  background: #232b4a;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px 0 #23272a22;
-  color: #fff;
+  background: #182342;
+  border: 1px solid #2c3858;
+  border-radius: 16px;
+  padding: 1.5rem;
 
-  h2 {
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 0.7rem;
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.7rem;
   }
 
-  p {
+  .fixture-item + .fixture-item {
+    border-top: 1px solid #2c3858;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .fixture-item strong {
+    color: #fff;
+    display: block;
     font-size: 1rem;
-    line-height: 1.7;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+
+  .fixture-item p {
+    color: #cbd2e3;
+    font-size: 0.95rem;
+    line-height: 1.65;
     margin: 0;
   }
 
-  .sub-title {
-    border-bottom: 1px solid #a8a8a828;
-    color: #ffd700;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 2.5rem;
+  .fixture-item b {
+    color: #fff;
+    font-weight: 600;
+  }
+}
 
-    &::before {
-      content: '•';
-      margin-right: 0.5rem;
-    }
+@media (width <= 768px) {
+  .download-page {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .download-products {
+    grid-template-columns: 1fr;
+  }
+
+  .common-info {
+    margin-top: 3.5rem;
+  }
+
+  .download-warning .warning-list {
+    flex-direction: column;
+  }
+}
+@media (width <= 480px) {
+  .download-title {
+    font-size: 1.65rem;
+  }
+
+  .download-product-section,
+  .available-fixture-info {
+    border-radius: 16px;
+    padding: 1.25rem;
   }
 }

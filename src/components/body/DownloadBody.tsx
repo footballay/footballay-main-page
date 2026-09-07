@@ -9,6 +9,8 @@ import Beta from '@asset/warnbeta.png';
 import ServerDown from '@asset/serverdown.png';
 import Available from '@asset/available.png';
 
+const EMAIL = `physickskim@gmail.com`;
+
 function DownloadBody() {
   const dispatch = useAppDispatch();
   const { status } = useAppSelector((state) => state.download);
@@ -40,79 +42,84 @@ function DownloadBody() {
   return (
     <main className="download-page">
       <h1 className="download-title">다운로드 안내</h1>
-      <div
-        className="download-license"
-        style={{
-          fontSize: '0.93em',
-          color: '#8ea1e1',
-          margin: '8px 0 18px 0',
-          textAlign: 'center',
-        }}
-      >
-        상업적 이용 가능. 포함된 이미지(팀 로고, 선수 사진 등)의 저작권을 책임지지 않습니다.
-        <br />본 서비스는 공식 리그나 클럽과 제휴 및 후원 관계가 없습니다.
-      </div>
-      <section className="download-warning">
-        <div className="warning-list">
-          <div className="warning-item">
-            <div className="icon beta">
-              <img src={Beta} alt="베타 버전 경고" />
-            </div>
-            <div>
-              <strong className="highlight">
-                풋볼레이는 현재
-                <br />
-                베타(0.x) 버전입니다.
-              </strong>
-              <div>서비스가 일시 중단될 수 있습니다.</div>
-            </div>
-          </div>
-          <div className="warning-item">
-            <div className="icon server">
-              <img src={ServerDown} alt="서버 다운 경고" />
-            </div>
-            <div>
-              <strong className="highlight">베타 버전이므로 불안정할 수 있습니다.</strong>
-              <div>문제 발생 시 언제든 문의해 주세요.</div>
-            </div>
-          </div>
-          <div className="warning-item">
-            <div className="icon league">
-              <img src={Available} alt="지원 리그 안내" />
-            </div>
-            <div>
-              <strong className="highlight">지원 리그/경기가 제한적입니다.</strong>
-              <div>EPL 지원. 기타 리그/경기는 별도 문의 바랍니다.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <DownloadStateButton
-        isWindowsDesktop={isWindowsDesktop}
-        // debugState="loading" // 로딩 상태
-        // debugState="failed" // 실패 상태
-        // debugState="succeeded" // 성공 상태
-        // debugState="unsupported" // 지원하지 않는 상태
-      />
+      <p className="download-intro">사용할 제품을 선택해 주세요.</p>
 
-      <div className="divider"></div>
-      <section className="available-fixture-info">
-        <h2># 지원 리그/경기(Available Fixture) 안내</h2>
-        <p>
-          <span className="sub-title">모든 경기/리그를 지원하지 않습니다.</span>
-          <br />
-          데이터 제공사의 API 커버리지와 요청 제한(Request Limit)으로 인해{' '}
-          <b>주요 리그 및 경기만 지원</b>
-          합니다.
-          <br />
-          <b>EPL(잉글랜드 프리미어리그)</b> 전 경기를 기본으로 지원하며, 이외 리그/경기(예: FA컵,
-          챔피언스리그 등)는 별도 문의가 필요합니다.
-          <br />
-          <br />
-          <span className="sub-title">원하는 리그/경기가 있다면 언제든 문의해 주세요.</span>
-          <br />
-          데이터 제공사의 API 커버리지에 포함된 경우 지원 가능합니다.
-        </p>
+      <section className="download-products" aria-label="Footballay 제품 다운로드">
+        <article className="download-product-section" aria-labelledby="extension-title">
+          <h2 id="extension-title">Chrome 확장 프로그램</h2>
+          <p className="product-subtitle">축구 중계 볼 때 좋아요</p>
+          <p className="product-description">
+            중계 화면에서 라인업, 경기 이벤트와 통계를 바로 확인할 수 있습니다.
+          </p>
+          <span className="product-status">Chrome 웹 스토어 등록 준비 중</span>
+        </article>
+
+        <article className="download-product-section" aria-labelledby="desktop-title">
+          <h2 id="desktop-title">데스크탑 앱</h2>
+          <p className="product-subtitle">입중계 스트리밍에 좋아요</p>
+          <p>스트리밍 캡처에 적합한 독립 오버레이 창으로 라인업과 경기 통계를 표시합니다.</p>
+          <DownloadStateButton
+            isWindowsDesktop={isWindowsDesktop}
+            // debugState="loading" // 로딩 상태
+            // debugState="failed" // 실패 상태
+            // debugState="succeeded" // 성공 상태
+            // debugState="unsupported" // 지원하지 않는 상태
+          />
+        </article>
+      </section>
+
+      <section className="common-info" aria-labelledby="common-info-title">
+        <h2 id="common-info-title">이용 전 안내</h2>
+        <div className="download-license">
+          포함된 이미지(팀 로고, 선수 사진 등)의 저작권을 책임지지 않습니다.
+          <br />본 서비스는 공식 리그나 클럽과 제휴 및 후원 관계가 없습니다.
+        </div>
+
+        <section className="download-warning" aria-label="서비스 안내">
+          <div className="warning-list">
+            <div className="warning-item">
+              <div className="icon beta">
+                <img src={Beta} alt="베타 버전 경고" />
+              </div>
+              <div>
+                <strong className="highlight">
+                  풋볼레이는 현재
+                  <br />
+                  베타(0.x) 버전입니다.
+                </strong>
+                <div>서비스가 일시 중단될 수 있습니다.</div>
+              </div>
+            </div>
+            <div className="warning-item">
+              <div className="icon server">
+                <img src={ServerDown} alt="서버 다운 경고" />
+              </div>
+              <div>
+                <strong className="highlight">베타 버전이므로 불안정할 수 있습니다.</strong>
+                <div>문제 발생 시 언제든 문의해 주세요.</div>
+              </div>
+            </div>
+            <div className="warning-item">
+              <div className="icon league">
+                <img src={Available} alt="지원 리그 안내" />
+              </div>
+              <div>
+                <strong className="highlight">지원 리그/경기가 제한적입니다.</strong>
+                <div>EPL 이외 기타 리그/경기는 별도 문의 바랍니다.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="available-fixture-info">
+          <h3>문의 방법 (Contact)</h3>
+          <div className="fixture-item">
+            <p>
+              {`Footballay 관련 문의는 ${EMAIL} 으로 연락 부탁드립니다.`} <br />
+            </p>
+            <p>{`For any inquiries regarding Footballay, please contact us at ${EMAIL}.`}</p>
+          </div>
+        </section>
       </section>
     </main>
   );
