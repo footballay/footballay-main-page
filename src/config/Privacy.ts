@@ -47,8 +47,9 @@ export const privacyPolicy: PrivacyPolicy = {
         {
           title: '서버 접속 정보',
           paragraphs: [
-            'Footballay API 이용 과정에서 일반적인 서버 접속 로그가 생성될 수 있습니다. 여기에는 IP 주소, 요청 시각, Footballay API 요청 경로, User-Agent 등의 기술적 정보가 포함될 수 있습니다.',
-            '이 정보는 서비스 운영, 장애 분석 및 보안을 위한 목적으로 사용됩니다.',
+            'Footballay API 이용 과정에서 IP 주소, 요청 시각, Footballay API 요청 경로, User-Agent 등의 기술적 정보가 서버 접속 로그에 기록될 수 있습니다.',
+            '이 정보는 서비스 운영, 장애 분석 및 보안을 위해 사용되며, 사용자를 지속적으로 식별하거나 행동을 추적·프로파일링하는 용도로 사용하지 않습니다.',
+            'Footballay 확장 프로그램은 GPS 등 기기의 정밀 위치 정보에 접근하거나 수집하지 않습니다.',
           ],
         },
       ],

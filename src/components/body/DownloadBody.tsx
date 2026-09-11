@@ -1,37 +1,20 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchLatestYml } from '../../store/downloadSlice';
 import DownloadStateButton from './DownloadStateButton';
 import './DownloadBody.scss';
-import { UAParser } from 'ua-parser-js';
 import Beta from '@asset/warnbeta.png';
 import ServerDown from '@asset/serverdown.png';
 import Available from '@asset/available.png';
+import { useDeviceSupport } from '../../hooks/useDeviceSupport';
+import ExtensionInstallButton from './ExtensionInstallButton';
 
 const EMAIL = `physickskim@gmail.com`;
 
 function DownloadBody() {
   const dispatch = useAppDispatch();
   const { status } = useAppSelector((state) => state.download);
-  const [isWindowsDesktop, setIsWindowsDesktop] = useState(false);
-
-  useEffect(() => {
-    // 1) Client Hints 우선
-    const uaData = (navigator as any).userAgentData;
-    if (uaData) {
-      const mobile = uaData.mobile;
-      const platform = uaData.platform;
-      setIsWindowsDesktop(!mobile && platform === 'Windows');
-    } else {
-      // 2) 폴백: UAParser 사용
-      const uap = new UAParser();
-      const os = uap.getOS();
-      const device = uap.getDevice();
-      const isWindowsDesktop = os.name === 'Windows' && device.type === undefined; // 데스크탑은 undefined
-      setIsWindowsDesktop(isWindowsDesktop);
-    }
-  }, []);
+  const { isWindowsDesktop } = useDeviceSupport();
 
   useEffect(() => {
     if (status === 'idle') {
@@ -51,7 +34,7 @@ function DownloadBody() {
           <p className="product-description">
             중계 화면에서 라인업, 경기 이벤트와 통계를 바로 확인할 수 있습니다.
           </p>
-          <span className="product-status">Chrome 웹 스토어 등록 준비 중</span>
+          <ExtensionInstallButton className="product-cta" />
         </article>
 
         <article className="download-product-section" aria-labelledby="desktop-title">

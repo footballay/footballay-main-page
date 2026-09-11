@@ -7,7 +7,9 @@ import extensionDemo from '@asset/extension-assets/footballay-demo-screenshot-ko
 import lineupFeature from '@asset/desktop/mainpage-feature-img-01-lineup.png';
 import teamStatsFeature from '@asset/desktop/mainpage-feature-img-02-teamstat.png';
 import playerStatsFeature from '@asset/desktop/mainpage-feature-img-03-playerstat.png';
+import ExtensionInstallButton from './ExtensionInstallButton';
 import './MainBody.scss';
+import './ProductCta.scss';
 
 function MainBody() {
   return (
@@ -51,9 +53,7 @@ function MainBody() {
                 <br />
                 원할 때 숨기고 펼쳐서 확인할 수 있습니다.
               </p>
-              <span className="product-cta product-cta--disabled">
-                Chrome 웹 스토어 등록 준비 중
-              </span>
+              <ExtensionInstallButton className="product-cta" />
             </div>
           </article>
 
